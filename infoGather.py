@@ -3,7 +3,7 @@ import socket
 import requests
 import sys
 import urllib.request
-
+print(f"infoGather    \nversion: v1.1")
 try:
 	domain = str(sys.argv[1])
 	port = int(sys.argv[2])
