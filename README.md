@@ -1,5 +1,9 @@
-<h1 align="center">infoGather<br>
-<a href="https://github.com/omkhard/infoGather"><img  src="/infoImage.svg" align="center" width="100" height="100" ></a>
+<h1 align="center">
+  <br>
+  infoGather
+  <br>
+  <a href="https://github.com/omkhard/infoGather"><img src="https://i.ibb.co/zbQhWbM/info-Image.png" width="100px" height="100px"></a>
+  <br>
 </h1>
 <p>
   Used for :<br>
