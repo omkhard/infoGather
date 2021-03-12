@@ -1,9 +1,14 @@
 # this is my info gathering miniProject
 import socket
 import requests
-import sys
+import sys , os
 import urllib.request
-print(f"infoGather    \nversion: v1.1")
+
+try:
+	os.system("figlet infoGather") #created  in exception for some users where figlet isnot present
+except:
+	pass
+print(f"\nversion: v1.1")
 try:
 	domain = str(sys.argv[1])
 	port = int(sys.argv[2])
