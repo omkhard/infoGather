@@ -31,12 +31,12 @@ if sock.fileno() != -1:
 	print(f"\033[32mDomain {socket.gethostbyname(domain)} is Up... \033[37m")
 	if port == 443:
 		req = requests.get(f"https://{domain}")
-		print(f"Status Code :{req.status_code}")
+		print(f"Status Code : {req.status_code}")
 		print(f"Service by port : {socket.getservbyport(port)}")
 
 	if port == 80:
 		req = requests.get(f"http://{domain}:{port}")
-		print(f"Status Code :{req.status_code}")
+		print(f"Status Code : {req.status_code}")
 		print(f"Service by port : {socket.getservbyport(port)}")
 
 print(f"Service by : {req.headers['Server']}")
