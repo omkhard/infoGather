@@ -22,4 +22,4 @@
   - Network Security Admin , 
   - the people who are highly working for web analysis for open ports and server analysis must see this tool.
  
-### version:  v1.1
+### version:  v1.2
