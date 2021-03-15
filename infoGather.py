@@ -8,7 +8,7 @@ try:
 	os.system("figlet infoGather") #created  in exception for some users where figlet isnot present
 except:
 	pass
-print(f"\nversion: v1.1")
+print(f"\nversion: v1.2")
 try:
 	domain = str(sys.argv[1])
 	port = int(sys.argv[2])
