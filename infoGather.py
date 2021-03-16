@@ -14,7 +14,7 @@ try:
 	port = int(sys.argv[2])
 
 except (IndexError , ValueError):
-	print(f"\033[33mMust pass an argument!!!")
+	print(f"\033[33mMust pass an argument!!!\033[37m")
 	sys.exit(2)
 
 try:
