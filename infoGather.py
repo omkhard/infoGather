@@ -19,8 +19,8 @@ except (IndexError , ValueError):
 
 try:
 	sock = socket.create_connection((domain,port))
-	sock.settimeout(5) #5secs
-
+	sock.settimeout(50) #50secs , socket will wait 50 sec to try connecting with the  server
+ 
 except:
 	print(f"\033[33mHost  Unreachable!!!");
 	sys.exit(2)
