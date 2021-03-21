@@ -27,7 +27,7 @@ except:
 
 req = None #no requests
 
-if sock.fileno() != -1:
+if sock.fileno() != -1: # if domain is up  , then analyse further
 	print(f"\033[32mDomain {socket.gethostbyname(domain)} is Up... \033[37m")
 	if port == 443:
 		req = requests.get(f"https://{domain}")
@@ -41,10 +41,16 @@ if sock.fileno() != -1:
 
 print(f"Service by : {req.headers['Server']}")
 for i in range(0,1000):
-	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # only dicovers TCP ports
+	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # only dicovers TCP ports i repeat only discovers TCP ports
 	s.settimeout(0.2) 
 	result = s.connect_ex((domain,i))
 	if result == 0:
 		print(f"Discovered port {i}")
+      
+# request's  headers 
+for i in req.headers:
+	print(req.headers[i])
+
+ 
 
 
