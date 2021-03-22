@@ -22,4 +22,7 @@
   - Network Security Admin , 
   - the people who are highly working for web analysis for open ports and server analysis must see this tool.
  
+### Good with port number 80 (http) , cause didn't added any certifacte TLS / SSL validation for (https) .
+
+
 ### version:  v1.2
