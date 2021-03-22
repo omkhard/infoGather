@@ -1,4 +1,4 @@
-# this is my info gathering miniProject
+# this is my Information Gathering miniProject
 import socket
 import requests
 import sys , os
