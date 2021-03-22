@@ -17,7 +17,7 @@
 </p>
 
 ### Who should use 
-  - Petesters ,
+  - Pentesters ,
   - System Admin , 
   - Network Security Admin , 
   - the people who are highly working for web analysis for open ports and server analysis must see this tool.
