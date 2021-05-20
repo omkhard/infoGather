@@ -13,7 +13,7 @@
 </p>
 <p>
   Usage :<br>
-  pyhton3 infoGather.py DOMAIN PORT <br>
+  python3 infoGather.py DOMAIN PORT <br>
 </p>
 
 ### Who should use 
