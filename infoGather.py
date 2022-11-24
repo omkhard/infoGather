@@ -4,9 +4,10 @@
 import socket
 import requests
 import sys , os
-import urllib.request 
+import urllib3
 import json
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 try:
 	os.system("figlet infoGather") #created  in exception for some users where figlet isnot present
@@ -44,9 +45,9 @@ if sock.fileno() != -1: # if domain is up  , then analyse further
 		print(f"Service by port : {socket.getservbyport(port)}")
 
 print(f"Service by : {req.headers['Server']}")
-
+print(f"\n\n")
 # trying to look for only tcp ports and not "to check with bruteforcing"
-f = open("../ports/ports.json")
+f = open("./ports/ports.json")
 data = json.load(f)
 ports = []
 for key,value in data.items():
@@ -55,13 +56,18 @@ for key,value in data.items():
 		ports.append(port)
 	else:
 		break
+print("---------Port Discovery---------")
+intPorts=[]
+for i in ports:
+	intPorts.append(int(i))
 
-for i in set(ports):
-	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # only dicovers TCP ports i repeat only discovers TCP ports
-	s.settimeout(0.2) 
-	result = s.connect_ex((domain,int(i)))
-	if result == 0:
-		print(f"Discovered port {i}")
+for i in set(intPorts):
+	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	s.settimeout(0.2)
+	request = s.connect_ex((domain,i))
+	if request==0:
+		print(f"Discovered ports:{i}")
+
 
 # request's  headers 
 for i in req.headers:
