@@ -5,6 +5,7 @@
   <a href="https://github.com/omkhard/infoGather"><img src="https://i.ibb.co/zbQhWbM/info-Image.png" width="100px" height="100px"></a>
   <br>
 </h1>
+<h2>An OSINT tool for WebApp Scrapping (Open Ports , Running Services extraction)</h2>
 <p>
   Used for :<br>
   1. For Domain specific analysis.<br>
