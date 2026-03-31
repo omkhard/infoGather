@@ -7,23 +7,25 @@
 </h1>
 <h2>An OSINT tool for WebApp Scrapping (Open Ports , Running Services extraction)</h2>
 <p>
-  ```bash
+ 
   Used for :<br>
   1. For Domain specific analysis.<br>
   2. Open Ports analysis.<br>
   3. Web Server analysis.<br>
-  ```
-</p>
-<p>
-  $ python3 infoGather.py -h<br>                   
-usage: infoGather.py [-h] -d DOMAIN -p PORTS<br>
 
-options:<br>
-  -h, --help           show this help message and exit<br>
-  -d, --domain DOMAIN  Pass for passing Domain.<br>
-  -p, --port PORTS     For passing API ports.<br>
-                                                
 </p>
+
+```bash
+
+  $ python3 infoGather.py -h                  
+usage: infoGather.py [-h] -d DOMAIN -p PORTS
+
+options:
+  -h, --help           show this help message and exit
+  -d, --domain DOMAIN  Pass for passing Domain.
+  -p, --port PORTS     For passing API ports.
+                                                
+```
 
 ### Who should use 
   - Pentesters ,
