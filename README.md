@@ -7,10 +7,12 @@
 </h1>
 <h2>An OSINT tool for WebApp Scrapping (Open Ports , Running Services extraction)</h2>
 <p>
+  ```bash
   Used for :<br>
   1. For Domain specific analysis.<br>
   2. Open Ports analysis.<br>
   3. Web Server analysis.<br>
+  ```
 </p>
 <p>
   $ python3 infoGather.py -h<br>                   
