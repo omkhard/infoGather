@@ -13,8 +13,14 @@
   3. Web Server analysis.<br>
 </p>
 <p>
-  Usage :<br>
-  python3 infoGather.py DOMAIN PORT <br>
+  $ python3 infoGather.py -h<br>                   
+usage: infoGather.py [-h] -d DOMAIN -p PORTS<br>
+
+options:<br>
+  -h, --help           show this help message and exit<br>
+  -d, --domain DOMAIN  Pass for passing Domain.<br>
+  -p, --port PORTS     For passing API ports.<br>
+                                                
 </p>
 
 ### Who should use 
@@ -25,4 +31,4 @@
 
 
 
-### version:  v1.2
+### version:  v1.3
