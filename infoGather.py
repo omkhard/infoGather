@@ -6,8 +6,16 @@ import requests
 import sys , os
 import urllib3
 import json
+import argparse
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-d','--domain',help="Pass for passing Domain.",dest="domain",required=True)
+parser.add_argument('-p','--port',help="For passing API ports.",dest="ports",required=True,type=int) 
+
+args = parser.parse_args()
 
 try:
 	os.system("figlet infoGather") #created  in exception for some users where figlet isnot present
@@ -15,8 +23,8 @@ except:
 	pass
 print(f"\nversion: v1.2")
 try:
-	domain = str(sys.argv[1])
-	port = int(sys.argv[2])
+	domain = args.domain
+	port = args.ports
 
 except (IndexError , ValueError):
 	print(f"\033[33mMust pass an argument!!!\033[37m")
@@ -39,12 +47,12 @@ if sock.fileno() != -1: # if domain is up  , then analyse further
 		print(f"Status Code : {req.status_code}")
 		print(f"Service by port : {socket.getservbyport(port)}")
 
-	if port == 80:
+	if port == 80 or port == 8080:
 		req = requests.get(f"http://{domain}:{port}",verify=False)
 		print(f"Status Code : {req.status_code}")
 		print(f"Service by port : {socket.getservbyport(port)}")
 
-print(f"Service by : {req.headers['Server']}")
+print(f"Service by : {req.headers}")
 print(f"\n\n")
 # trying to look for only tcp ports and not "to check with bruteforcing"
 f = open("./ports/ports.json")
@@ -60,13 +68,21 @@ print("---------Port Discovery---------")
 intPorts=[]
 for i in ports:
 	intPorts.append(int(i))
-
+	
+	
+sockets=[]
 for i in set(intPorts):
 	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	s.settimeout(0.2)
 	request = s.connect_ex((domain,i))
+	
 	if request==0:
 		print(f"Discovered ports:{i}")
+		sockets.append(i)
+
+if len(sockets) == 0:
+	print("No Ports opened !@!")
+
 
 
 # request's  headers 
